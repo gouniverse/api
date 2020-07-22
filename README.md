@@ -1,6 +1,6 @@
 # API
 
-API responses
+API responses in JSON format
 
 - Error(msg string)
 - ErrorWithData(msg string, data []interface)
