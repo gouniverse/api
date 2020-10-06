@@ -23,6 +23,11 @@ func ErrorWithData(message string, data map[string]interface{}) Response {
 	return Response{Status: "error", Message: message, Data: data}
 }
 
+// Forbidden returns an forbidden message, user is authenticated but insufficient permissions
+func Forbidden(message string) Response {
+	return Response{Status: "forbidden", Message: message, Data: map[string]interface{}{}}
+}
+
 // Success returns a success message
 func Success(message string) Response {
 	return Response{Status: "success", Message: message, Data: map[string]interface{}{}}
@@ -31,6 +36,11 @@ func Success(message string) Response {
 // SuccessWithData returns a success message with data
 func SuccessWithData(message string, data map[string]interface{}) Response {
 	return Response{Status: "success", Message: message, Data: data}
+}
+
+// Unauthorized returns an unauthorized message, user is not unauthorized
+func Unauthorized(message string) Response {
+	return Response{Status: "unauthorized", Message: message, Data: map[string]interface{}{}}
 }
 
 // Respond writes a JSON or JSONP response
