@@ -59,3 +59,8 @@ func Respond(w http.ResponseWriter, r *http.Request, resp Response) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(response)
 }
+
+func (r Response) ToString() string {
+	str, _ := json.Marshal(r)
+	return string(str)
+}
