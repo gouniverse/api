@@ -38,7 +38,12 @@ func SuccessWithData(message string, data map[string]interface{}) Response {
 	return Response{Status: "success", Message: message, Data: data}
 }
 
-// Unauthorized returns an unauthorized message, user is not unauthorized
+// Unauthenticated returns an unauthenticated message, user is not known (authenticated)
+func Unauthenticated(message string) Response {
+	return Response{Status: "unauthenticated", Message: message, Data: map[string]interface{}{}}
+}
+
+// Unauthorized returns an unauthorized message, user is known but not unauthorized to do the action
 func Unauthorized(message string) Response {
 	return Response{Status: "unauthorized", Message: message, Data: map[string]interface{}{}}
 }
