@@ -1,18 +1,5 @@
 package api
 
-import (
-	"encoding/json"
-	"net/http"
-	"strings"
-)
-
-// Response defines an response for the API
-type Response struct {
-	Status  string                 `json:"status"`
-	Message string                 `json:"message"`
-	Data    map[string]interface{} `json:"data"`
-}
-
 // Error returns an error message
 func Error(message string) Response {
 	return Response{Status: "error", Message: message, Data: map[string]interface{}{}}
@@ -46,26 +33,4 @@ func Unauthenticated(message string) Response {
 // Unauthorized returns an unauthorized message, user is known but not unauthorized to do the action
 func Unauthorized(message string) Response {
 	return Response{Status: "unauthorized", Message: message, Data: map[string]interface{}{}}
-}
-
-// Respond writes a JSON or JSONP response
-func Respond(w http.ResponseWriter, r *http.Request, resp Response) {
-	callback := strings.Trim(r.URL.Query().Get("callback"), "")
-
-	response, _ := json.Marshal(resp)
-
-	if callback != "" {
-		response := callback + "(" + string(response) + ");"
-		w.Header().Set("Content-Type", "application/javascript")
-		w.Write([]byte(response))
-		return
-	}
-	
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(response)
-}
-
-func (r Response) ToString() string {
-	str, _ := json.Marshal(r)
-	return string(str)
 }
