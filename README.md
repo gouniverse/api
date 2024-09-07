@@ -48,3 +48,15 @@ api.Respond(w, r, api.Response{
   },
 })
 ```
+
+## What is the Difference Between Unauthenticated, Unauthorized and Forbidden?
+
+1. Unauthenticated: This is the most fundamental level of access control. If a user or system cannot be verified as a legitimate entity, it will be denied access to any resource.
+2. Unauthorized: Once a user or system has been authenticated, it must also be authorized to access a particular resource. If it lacks the necessary permissions, it will be denied access.
+3. Forbidden: This is the highest level of access control. Even if a user or system is both authenticated and authorized, it may still be denied access to a resource if there are specific conditions or rules in place that prohibit access.
+
+In summary:
+
+Unauthenticated -> Unauthorized -> Forbidden
+
+This order reflects the increasing levels of verification and permission required to access a resource.
