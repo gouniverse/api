@@ -12,6 +12,7 @@ func Respond(w http.ResponseWriter, r *http.Request, resp Response) {
 
 	response, _ := json.Marshal(resp)
 
+	// JSONP Response
 	if callback != "" {
 		response := callback + "(" + string(response) + ");"
 		w.Header().Set("Content-Type", "application/javascript")
@@ -19,6 +20,7 @@ func Respond(w http.ResponseWriter, r *http.Request, resp Response) {
 		return
 	}
 
+	// JSON Response
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(response)
 }

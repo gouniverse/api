@@ -25,7 +25,7 @@ Concise library for generating API responses in JSON format
 api.Respond(w, r, api.Error("api key is required"))
 
 // return error response with HTTP status sode
-api.RespondWithStatus(w, r, api.Error("endpoint not found"), http.StatusNotFound)
+api.RespondWithStatusCode(w, r, api.Error("endpoint not found"), http.StatusNotFound)
 
 // return success response with data payload
 api.Respond(w, r, api.SuccessWithData("success", map[string]interface{}{
