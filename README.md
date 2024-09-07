@@ -60,3 +60,9 @@ In summary:
 Unauthenticated -> Unauthorized -> Forbidden
 
 This order reflects the increasing levels of verification and permission required to access a resource.
+
+However in REST context, these are represented with ambiguous status codes:
+
+- Unauthenticated is represented by 401 Unauthorized: This indicates that the client needs to authenticate itself with the server. Typically, this involves providing credentials like a username and password.
+
+- Unauthorized & Forbidden are both represented by 403 Forbidden: This means the server understood the request but refuses to fulfill it. This could be due to a lack of necessary permissions or a policy restriction.
