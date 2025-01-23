@@ -1,4 +1,7 @@
-# API <a href="https://gitpod.io/#https://github.com/gouniverse/api" style="float:right:"><img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod" loading="lazy"></a>
+# API 
+<a href="https://gitpod.io/#https://github.com/gouniverse/api" style="float:right:"><img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod" loading="lazy"></a>
+
+[![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/gouniverse/api)
 
 [![Tests Status](https://github.com/gouniverse/api/workflows/tests/badge.svg)](https://github.com/gouniverse/api/workflows/tests/badge.svg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/gouniverse/api)](https://goreportcard.com/report/github.com/gouniverse/api)
